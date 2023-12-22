@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;4h00;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Título da Página -->
+    <title>Millionaire Advertsement</title>
+    <style>
+      .esconder {display:none;}
+
+      body {
+      font-size: 16px;
+      background-color: #fff;
+      min-height: 100%;
+      }
+
+      .container{
+        max-width: 800px!important;
+        text-align: center;
+      }
+
+      .a-btn {
+        text-decoration: none;
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+        border: 0; 
+        font: inherit; 
+        vertical-align: baseline;
+        color: #2e82bc; 
+        outline: 0; 
+        line-height: 1; 
+        text-align: center; 
+        position:relative!important; display: inline-block!important;
+        border-style: solid; 
+        width: 100%; padding-left: 0!important; padding-right: 0!important; 
+        margin-bottom: 10px; 
+        padding: 22px 44px; border-color: #ff5535; border-width: 0px; 
+        border-radius: 25px; 
+        background: linear-gradient(to bottom, #0487EA 0%, #0A0A0A 100%);
+        box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5); 
+        text-decoration: none!important;
+        cursor: pointer;
+
+         animation: pulse 1.5s infinite alternate;
+        animation-name: pulse;
+        -webkit-animation-name: pulse;
+        animation-duration: 1.5s;
+        -webkit-animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        text-decoration: none;
+      }
+
+      @keyframes pulse{
+        0%,100%{transform:scale(.9);opacity:.9;}
+        50%{transform:scale(1);opacity:1;}
+        }
+        @-webkit-keyframes pulse{
+        0%,100%{-webkit-transform:scale(.95);opacity:.7}
+        50%{-webkit-transform:scale(1);opacity:1}
+      }
+
+      .span-btn {
+        text-decoration: none;
+        -webkit-font-smoothing: antialiased; 
+        text-align: center;
+        margin: 0; 
+        border: 0; 
+        font: inherit;
+        vertical-align: baseline;
+        display: block; 
+        position: relative; 
+        z-index: 1; 
+        padding: 0 15px; 
+        white-space: normal; 
+        font-size: 20px;
+        color: #ffffff; 
+        font-family: Oswald; 
+        font-weight: bold; 
+        text-shadow: #000000 0px 1px 0px;
+        text-decoration: none;
+      }
+      .span-btn2 {
+        -webkit-font-smoothing: antialiased; 
+        text-align: center;
+        padding: 0; border: 0;
+        font: inherit; 
+        vertical-align: baseline; 
+        display: block; 
+        position: relative;
+        z-index: 1; 
+        margin: .2em 0 -.5em; 
+        font-size: 15px; 
+        color: #f5e051; 
+        font-family: Cabin; 
+        font-weight: bold; 
+        font-style: italic;
+        text-shadow: #000000 0px 1px 0px;
+      }
+
+      .som{
+        width: 100%;
+      }
+
+      .last-pg{
+        width: 100%;
+        height: 100%;
+        padding-bottom: 5px;
+        padding-top: 10px;
+      }
+
+      .modal{
+        background-color: white;
+        border-radius: 20px;
+        margin: 50px auto;
+        overflow:auto; 
+        max-width: 500px;
+        z-index: 10000000;
+        padding: 10px;
+        color: #646464;
+      }
+
+      .close-modal{
+          cursor: pointer;
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
+      }
+
+      .modal::-webkit-scrollbar {
+          width: 6px;
+      }
+
+      .modal-footer button{
+        margin: 0 auto;
+        border: none;
+        padding: 10px 40px;
+      }
+
+      .dim {
+        /* For Internet Explorer */
+        box-shadow: 0 0 0 1000px rgba(0, 0, 0, .6);
+          
+        /* For other browsers */
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .6);
+      }
+
+      .footer p{
+        font-weight: 100;
+        font-size: 12px;
+        margin: 20px auto;
+        padding: 2px 28px;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #787878;
+        max-width: 800px;
+        padding-top: 20px;
+      }
+
+      .texto-branco{
+        color: #fff;
+      }
+
+      /* PESSOAS ASSISTINDO */
+      .assistindo{
+        color: white;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px;
+      }
+
+      .assistindo span{
+        font-weight: 800;
+      }
+      /* END PESSOAS ASSISTINDO */
+
+      .img-uni{
+        max-width: 19%;
+        margin: auto;
+      }
+
+      ol li{
+          padding-top: 15px;
+          padding-right: 10px;
+      }
+
+      /* Cometários FB*/
+      a.button-IWiNKI0399434-element {
+        background-color: #ffafcc;
+        border-radius: 4px;
+        border: none;
+        color: #ffffff;
+        padding: 16px 32px 16px 32px;
+        font-weight: 600;
+        display: block;
+        width: fit-content;
+        text-align: center;
+        margin: 4vh auto 6vh auto;
+        font-size: 1.49vw;
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+
+      @media (max-width: 1200px) {
+        a.button-IWiNKI0399434-element {
+          font-size: 3.38vw;
+          margin: 2.64vh auto 4.5vh auto
+        }
+      }
+
+      @media (max-width: 600px) {
+        a.button-IWiNKI0399434-element {
+          font-size: 4.50vw;
+        }
+      }
+
+      .px-1{padding-left:4px;padding-right:4px}
+      .pt-0.5{padding-top:2px}
+      .mt-4{margin-top:16px}
+      @media (min-width:640px){.sm\:text-sm{font-size:14px;line-height:20px}}
+      .mt-2{margin-top:8px}
+      .mb-2{margin-bottom:8px}
+      .flex{display:flex}
+      .w-full{width:100%}
+      .space-x-1>:not([hidden])~:not([hidden]){margin-left:.25rem}
+      .items-center{align-items:center}
+      .font-\[Helvetica\]{font-family:Helvetica,Arial,sans-serif}
+      .cursor-pointer{cursor:pointer}
+      .rounded-full{border-radius:99999px}
+      .h-12{height:48px}.w-12{width:48px}
+      .flex-col{flex-direction:column}
+      .py-1{padding-top:4px;padding-bottom:4px}
+      .px-3{padding-left:12px;padding-right:12px}
+      .pl-0\.5,.px-0\.5{padding-left:2px}
+      .rounded-\[18px\]{border-radius:18px}
+      .bg-stone-100{background-color:#f5f5f4}
+      .px-0\.5{padding-right:2px}
+      .font-semibold{font-weight:600}
+      .text-\[\#365899\]{color:#365899}
+      .text-\[13px\]{font-size:13px}
+      .leading-4{line-height:16px}
+      .hover\:underline:hover{text-decoration-line:underline}
+      .text-sm{font-size:14px}
+      .relative{position:relative}
+      .justify-between{justify-content:space-between}
+      .grow{flex-grow:1}
+      .text-xs{font-size:12px}
+      .text-\[\#90949c\]{color:#90949c}
+      .ml-px{margin-left:1px}
+      .gap-1{gap:4px}
+      .w-fit{width:fit-content}
+      .hidden{display:none}
+      .-mt-1{margin-top:-4px}
+      .-mt-2{margin-top:-8px}
+      .mr-2{margin-right:8px}
+      .h-4,.h-5{height:16px}
+      .drop-shadow{--tw-drop-shadow:drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));filter:var(--tw-drop-shadow)}
+      .bg-slate-50{background-color:#f8fafc}
+      .py-0\.5{padding-top:2px;padding-bottom:2px}
+      .pr-1{padding-right:4px}
+      .block{display:block}
+      .w-4{width:16px}
+      .z-10{z-index:10}
+      .-ml-1{margin-left:-4px}
+      .ml-4{margin-left:16px}
+      .gap-x-0\.5{column-gap:2px}
+      .mr-0\.5{margin-right:2px;margin-left:2px}
+      .border-l{border-left-width:1px}
+      .border-slate-300{border-color:#cbd5e1}
+      .border-dotted{border-style:dotted}
+      .ml-5{margin-left:20px}.h-8{height:32px}
+      .w-8{width:32px}.h-10{height:40px}
+      .w-10{width:40px}
+      @media (min-width:640px){.sm\:w-16{width:64px}.sm\:ml-12{margin-left:48px}}
+      .pl-2{padding-left:8px}
+
+      .fbComments-nePoMc4912814-element {
+      max-width: 800px;
+      margin: 15px auto 20px auto;
+      padding: 16px;
+      border-radius:20px;
+      background-color:#fff;
+      }
+      .fbComments-nePoMc4912814-element p {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      }
+
+      a.button-nmYvzv4924929-element {
+      background-color: #ffafcc;
+      border-radius: 4px;
+      border: none;
+      color: #ffffff;
+      padding: 16px 32px 16px 32px;
+      font-weight: 600;
+      display: block;
+      width: fit-content;
+      text-align: center;
+      margin: 6vh auto 1vh auto;
+      font-size: 1.49vw;
+      box-sizing: border-box;
+      max-width: 100%;
+      }
+      @media (max-width: 1200px) {
+      a.button-nmYvzv4924929-element {
+      font-size: 3.38vw;
+      margin: 3.96vh auto 0.75vh auto
+      }
+      }
+      @media (max-width: 600px) {
+        a.button-nmYvzv4924929-element {
+          
+        }
+      }
+
+      .resp{
+        margin-left: 45px;
+        margin-top: -15px;
+        border-left: 1px dotted #dadada;
+        padding-left: 10px;
+        padding-top: 1px;
+      }
+      /* END -- Cometários FB*/
+
+
+  </style>
+
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1710952266019355');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1710952266019355&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QGGJBYEYFX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QGGJBYEYFX');
+</script>
+
+  </head>
+  <body>
+    <div style="width: 100%;text-align: center;background-color: #000;color: white;font-weight: bold;font-family: sans-serif;"><p class="assistindo">ATENCIÓN: WATCH THE VIDEO UNTIL THE END TO HAVE ACCESS TO THE APP.</p></div>
+    <header style="padding-bottom:40px;">
+      <div class="container">        
+        <!-- HL em IMG -->
+        <img style="width: 100%;max-width: 600px;padding-bottom: 10px" src="img/hl-02.png">
+    
+        <!-- VSL -->
+        <div id="vid_658509ef06fbfb0009065fb1" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_658509ef06fbfb0009065fb1" src="https://images.converteai.net/e273e5fa-413e-4367-9a2b-d3bb35f3ec2b/players/658509ef06fbfb0009065fb1/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_658509ef06fbfb0009065fb1" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_658509ef06fbfb0009065fb1">var s=document.createElement("script");s.src="https://scripts.converteai.net/e273e5fa-413e-4367-9a2b-d3bb35f3ec2b/players/658509ef06fbfb0009065fb1/player.js",s.async=!0,document.head.appendChild(s);</script>
+
+        <!-- END VSL -->
+                      
+
+        <h2 style="    font-size: 15px;text-align: center;padding: 15px 5px;font-weight: 700;">MAKE SURE YOUR SOUND IS TURNED ON!</h2>
+
+        <!-- Botão -->
+        <div id="cta1" class="esconder mt-4">
+          <a href="https://pay.hotmart.com/M86684298T?off=nxlsvhov&checkoutMode=10" class="a-btn" style="text-decoration: none;">
+            <span class="span-btn">ACCESS TO THE MILLIONAIRE ADVERTSEMENT NOW</span>
+          </a>
+          <img style="max-width: 280px;margin: auto;display: block;" src="img/pay.png">
+        </div>
+      </div>        
+    </header>
+
+    <div class="esconder" style="width: 100%; background-color: #002D4E;padding: 10px">
+      <div style="margin: 0 auto;max-width: 600px;padding: 5px 10px;text-align: center;">
+        <img style="margin: auto;padding: 20px 5px;" src="img/garantia.png">
+        <div style="">
+          <h3 style="font-size: 33px;margin-bottom: 25px;color: white;font-weight: 700;">GUARANTEE POLICY</h3>
+          <p style="color: white;font-weight: 700;">The “<span style="color: #ffcc00">Millionaire Advertsement</span>” has a 100% money back guarantee for 15 days from your original purchase. If you are not fully and completely satisfied with this product, its results, or your experience, simply let us know by contacting us via email: contact@millionaireadvertsement.com and you will receive a full refund of what you ordered. Just let us know you want to return the product and we’ll refund your money, no questions asked and no hassle!</p>
+        </div>
+      </div>
+      
+    </div>
+
+        <!-- COMENTTÀRIOS -->
+    <div style="background-color: #EFF0F4; padding: 20px 10px;">
+            <div style="text-align: left;" class="fbComments-nePoMc4912814">
+                <div id="testimonials" class="fbComments-nePoMc4912814-element">
+                    <p class="text-xs sm:text-sm leading-4 font-semibold mb-2">
+                        Showing 14 of 2352 comments
+                    </p>
+                    <span class="line-fb"></span>
+
+                    <div class="mb-2">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/01.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Emilia Yager</p>
+                                <p class="text-sm leading-4 pt-0.5">I tried the app and really liked it, this method of making money is very good and the app is to be congratulated! I’ve been using it for about 5 days and I’m making an average of $100 a day. I highly recommend it!</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">12</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">16</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/02.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Jonny Davis</p>
+                                <p class="text-sm leading-4 pt-0.5">I’m pretty skeptical about a lot of apps, but this app is to be congratulated! I closed out March with just over $4,100, it’s a good extra income, and if it continues like this, I’ll quit my current job to focus on this.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">5</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/03.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Thomas Hill</p>
+                                <p class="text-sm leading-4 pt-0.5">I watched the video to the end and got access to the app, it really works, I’m in my second week and so far so good, I’m making withdrawals to my account and they always fall on the same day, so far it’s perfect.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">10</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">14</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/04.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Maria Parker</p>
+                                <p class="text-sm leading-4 pt-0.5">I swear I thought this was a lie, I even saw an ad last month and showed it to my friend, I didn’t want to risk buying it, but she bought it and I saw that it really worked, I bought it yesterday and I managed to make $92.11, congratulations to the development team, I’m really liking it.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">10</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">21</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/05.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Olivia Emma</p>
+                                <p class="text-sm leading-4 pt-0.5">Has anyone used it and can tell me if it works and if it’s really true?</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">2</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2 resp">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/06.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Amanda Flores</p>
+                                <p class="text-sm leading-4 pt-0.5">Yes, I bought it a few days ago and today I made my first withdrawal on the platform and the money dropped normally, very good.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">9</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">19</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2 resp">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/07.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Wllian Perry</p>
+                                <p class="text-sm leading-4 pt-0.5">Yes, it works, you can trust it, I tested it and it really makes money.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">8</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">8</span>
+                            </div>
+                        </div>
+                    </div>    
+
+                    <div class="mb-2 resp">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/05.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Olivia Emma</p>
+                                <p class="text-sm leading-4 pt-0.5">Thanks guys, I’ll try it out!</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">9</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">21</span>
+                            </div>
+                        </div>
+                    </div>        
+
+                    <div class="mb-2">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/08.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Marco Rusell</p>
+                                <p class="text-sm leading-4 pt-0.5">I’m 54 years old and I confess that I’m pretty clueless when it comes to these apps, but it was easy to use and learn, it’s generating me a very good income, I’ll show this to my son.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">4</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">2</span>
+                            </div>
+                        </div>
+                    </div>  
+
+                    <div class="mb-2">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/09.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Liam Amaral</p>
+                                <p class="text-sm leading-4 pt-0.5">Very good, I watched the whole video and understood how to use the app, I’ll download it right away!</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">2</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">7</span>
+                            </div>
+                        </div>
+                    </div>   
+
+                    <div class="mb-2">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/10.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Laura Andrew</p>
+                                <p class="text-sm leading-4 pt-0.5">I managed to make my first withdrawal, I withdrew U$ 2,300 to my PayPal account yesterday, I would like to know if there is any way to withdraw to cryptocurrency.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">5</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">17</span>
+                            </div>
+                        </div>
+                    </div>  
+
+                    <div class="mb-2 resp">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/11.webp" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">Matthew Bell</p>
+                                <p class="text-sm leading-4 pt-0.5">I also have this question, I’m currently withdrawing to my bank account, but I like to invest in bitcoin, it would be easier to have an option to withdraw like that.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">2</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">12</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2 resp">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/12.jpg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">André Tevarh</p>
+                                <p class="text-sm leading-4 pt-0.5">There is no such option, but why don’t you withdraw to PayPal and then send it to the cryptocurrency exchange?</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">2</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">12</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                    <div class="flex w-full space-x-1 items-center font-[Helvetica]">
+                        <img src="img/13.jpeg" class="cursor-pointer rounded-full h-10 w-10">
+                        <div class="flex w-full flex-col py-1 px-3 rounded-[18px] bg-stone-100">
+                            <div class="px-0.5 py-1">
+                                <p class="font-semibold text-[#365899] text-[13px] leading-4 cursor-pointer hover:underline" style="margin-bottom: 2px">James Carl</p>
+                                <p class="text-sm leading-4 pt-0.5">I had already heard about this app, finally I found your website!!!</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="flex w-full justify-between">
+                            <div class="w-12 sm:w-16"></div>
+                            <div class="grow flex gap-1 text-xs pt-0.5">
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Like</p>
+                                <p class="text-[#90949c]">·</p>
+                                <p class="font-semibold cursor-pointer hover:underline text-[#90949c]">Reply</p>
+                                <p class="text-[#90949c]">·</p>
+                                <div class="text-[#90949c] flex gap-x-0.5 cursor-pointer hover:underline">
+                                    <p class="text-xs text-[#90949c]">2</p>
+                                    <p class="text-[#90949c] ">min</p>
+                                </div>
+                            </div>
+                            <div class="-mt-2 mr-2 h-5 flex items-center relative drop-shadow rounded-full bg-slate-50 py-0.5 px-1 w-fit">
+                                <img class="w-4 z-10 block" src="https://img.imageboss.me/atm/cdn/p/l.png">
+                                <img class="w-4 -ml-1 mr-0.5" src="https://img.imageboss.me/atm/cdn/p/h.png">
+                                <span class="text-xs text-[#90949c] pt-0.5">12</span>
+                            </div>
+                        </div>
+                    </div>          
+
+                  <span class="line-fb"></span>    
+                  <div id="depositions-plugin-facebook-block" style="display: flex;">
+                    <img style="width: 24px;margin-right: 5px;" id="depositions-icon-facebook" src="img/17.png" />
+                    <span id="depositions-txt-facebook" class="plugin-facebook-text ml-8"></span>
+                  </div>    
+              </div>
+          </div>
+    </div>
+    <!-- END COMENTÀRIOS -->
+
+    <footer style=" color: #000;">
+        <div style="background-color: #000" class="last-pg">
+          <!-- Termos de Uso e Política de Privacidade -->
+          <div style="text-align: center;color: #fff;font-size: 16px;text-transform: uppercase;"><b>Copyright 2023 ®<br>All rights reserved</b></div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+
+
+    //--------------------------------------
+
+    //Botão Sincronizado
+        
+    //-------------------------------------
+
+    document.addEventListener("DOMContentLoaded", function() {
+    /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+    var SECONDS_TO_DISPLAY = 1;
+    var CLASS_TO_DISPLAY = ".esconder";
+    /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+    var attempts = 0;
+    var elsHiddenList = [];
+    var elsDisplayed = false;
+    var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+    var alreadyDisplayedKey =alreadyElsDisplayed${SECONDS_TO_DISPLAY}
+    var alreadyElsDisplayed = null;
+    try {
+        alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+    } catch(e) {
+        console.warn('Failed to read data from localStorage: ', e);
+    }
+    setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+    var showHiddenElements = function () {
+    elsDisplayed = true;
+    elsHiddenList.forEach((e) => e.style.display = "block");
+    try {
+      localStorage.setItem(alreadyDisplayedKey, true);
+    } catch (e) {
+      console.warn('Failed to save data in localStorage: ', e);
+    }
+    }
+    var startWatchVideoProgress = function () {
+    if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+    if (attempts >= 10) return;
+    attempts += 1;
+    return setTimeout(function () { startWatchVideoProgress() }, 1000);
+    }
+    smartplayer.instances[0].on('timeupdate', () => {
+    if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+    if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+    showHiddenElements();
+    })
+    }
+    if (alreadyElsDisplayed === 'true') {
+    setTimeout(function () { showHiddenElements(); }, 100);
+    } else {
+    startWatchVideoProgress()
+    }
+    });
+
+  </script>
+
+<script>
+
+let prefix = ["pay.hotmart.com"];
+
+function getParams() {
+
+let t = "",
+
+e = window.top.location.href,
+
+r = new URL(e);
+
+if (null != r) {
+
+let a = r.searchParams.get("utm_source"),
+
+n = r.searchParams.get("utm_medium"),
+
+o = r.searchParams.get("utm_campaign"),
+
+m = r.searchParams.get("utm_term"),
+
+c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+
+}
+
+return t
+
+}! function() {
+
+var t = new URLSearchParams(window.location.search);
+
+t.toString() && document.querySelectorAll("a").forEach(function(e) {
+
+for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+
+})
+
+}(); </script>
+
+<script>
+        //Back Intent NOVO
+        !function () {
+            var url = window.location.href;
+            url = url.split("?");
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", "");
+                onpopstate = function (t) {
+                    t.state && location.replace("https://appearnwithinsta.com/backredirect/?" + url[1])
+                }
+            } catch (o) {
+            }
+        }();
+    </script>
+
+  </body>
+</html>
